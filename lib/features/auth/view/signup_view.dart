@@ -53,6 +53,18 @@ class _SignupViewState extends ConsumerState<SignupView> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
+                      //signup
+                      Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          color: Pallete.greyColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 32,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
                       //textfield 1
                       AuthField(
                         controller: emailController,

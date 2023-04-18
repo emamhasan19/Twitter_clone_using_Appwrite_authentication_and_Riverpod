@@ -32,8 +32,9 @@ class MyApp extends ConsumerWidget {
       theme: AppTheme.theme,
       home: ref.watch(currentUserAccountProvider).when(
             data: (user) {
-              // print(user);
+              print(user);
               if (user != null) {
+                print("yesss");
                 return const HomeView();
               }
               return const SignupView();

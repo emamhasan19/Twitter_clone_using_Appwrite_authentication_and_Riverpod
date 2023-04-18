@@ -21,7 +21,9 @@ final authControllerProvider = StateNotifierProvider<AuthController, bool>(
 
 final currentUserDetailsProvider = FutureProvider((ref) {
   final currentUserId = ref.watch(currentUserAccountProvider).value!.$id;
+  print(currentUserId);
   final userDetails = ref.watch(userDetailsProvider(currentUserId));
+  print("user ${userDetails.value}");
   return userDetails.value;
 });
 
@@ -106,6 +108,7 @@ class AuthController extends StateNotifier<bool> {
   }
 
   Future<UserModel> getUserData(String uid) async {
+    print("uid is $uid");
     final document = await _userAPI.getUserData(uid);
     final updatedUser = UserModel.fromMap(document.data);
     return updatedUser;
