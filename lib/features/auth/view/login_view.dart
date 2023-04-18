@@ -15,6 +15,12 @@ class EmailFieldValidator {
   }
 }
 
+class passwordValidator {
+  static String? passValidate(String value) {
+    return value.isEmpty ? "Please enter password!" : null;
+  }
+}
+
 class LoginView extends ConsumerStatefulWidget {
   static route() => MaterialPageRoute(
         builder: (context) => const LoginView(),
@@ -44,6 +50,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
         password: passwordController.text,
         context: context);
     EmailFieldValidator.validate(emailController.text);
+    passwordValidator.passValidate(passwordController.text);
   }
 
   @override
